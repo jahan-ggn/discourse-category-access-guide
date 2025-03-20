@@ -56,9 +56,7 @@ after_initialize do
 
   module ::GuardianCategoryAccessExtension
     def can_see_category?(category)
-      if Sidekiq.server?
-        return true
-      end
+      return true if Sidekiq.server?
 
       default_permission = super(category)
 
