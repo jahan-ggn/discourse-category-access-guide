@@ -118,7 +118,6 @@ after_initialize do
       category = Category.find_by(id: category_id)
 
       category_access_map = JSON.parse(SiteSetting.category_access_map || "{}")
-      puts "F ----> #{category_access_map}"
       restricted_category_id = nil
       topic_guide_url = nil
 
